@@ -1,5 +1,0 @@
-package sorm
-
-func main() {
-
-}

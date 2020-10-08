@@ -1,0 +1,18 @@
+{
+  "table": "Email",
+  "fields": {
+    "id": {
+      "type": "Int",
+      "generatedValue": true
+    },
+    "name": {
+      "type": "string",
+      "length": 255
+    },
+    "users": {
+      "type": "MtO",
+      "by": "email",
+      "target": "User"
+    }
+  }
+}

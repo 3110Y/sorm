@@ -1,0 +1,18 @@
+{
+  "table": "Office",
+  "fields": {
+    "id": {
+      "type": "Int",
+      "generatedValue": true
+    },
+    "name": {
+      "type": "string",
+      "length": 255
+    },
+    "users": {
+      "type": "OtM",
+      "by": "office",
+      "target": "User"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-package sorm
+package orm
 
 func main() {
 

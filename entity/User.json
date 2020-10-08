@@ -1,0 +1,62 @@
+{
+  "table": "User",
+  "fields": {
+    "id": {
+      "type": "Int",
+      "generatedValue": true
+    },
+    "username": {
+      "type": "string",
+      "length": 255
+    },
+    "plainPassword": {
+      "type": "string",
+      "length": 255,
+      "nullable": true
+    },
+    "password": {
+      "type": "string",
+      "length": 255,
+      "nullable": true
+    },
+    "DND": {
+      "type": "bool",
+      "default": true
+    },
+    "internalPhone": {
+      "type": "decimal",
+      "precision": 11,
+      "scale": 0,
+      "nullable": true
+    },
+    "deletedAt": {
+      "type": "datetime",
+      "nullable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "FillOn": "create",
+      "index": true
+    },
+    "updatedAt": {
+      "type": "datetime",
+      "FillOn": "update"
+    },
+    "office": {
+      "type": "MtO",
+      "by": "users",
+      "target": "Office",
+      "removeChildren": true
+    },
+    "email": {
+      "type": "OtM",
+      "by": "users",
+      "target": "Email",
+      "removeOrphan": true
+    },
+    "count_email": {
+      "type": "custom",
+      "SQL": "SELECT COUNT(email) as count FROM ~email WHERE id = @id"
+    }
+  }
+}
